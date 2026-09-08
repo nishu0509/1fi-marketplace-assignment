@@ -6,7 +6,6 @@ const NAV_ITEMS = [
   { icon: "👤", label: "Profile" },
 ];
 
-// Desktop-only top nav; mobile keeps the app-style BottomNav instead
 const TopBar = () => {
   return (
     <header className="sticky top-0 z-20 hidden border-b border-gray-100 bg-white/90 backdrop-blur md:block">

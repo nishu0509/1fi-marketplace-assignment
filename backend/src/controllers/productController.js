@@ -1,7 +1,5 @@
 import Product from "../models/Product.js";
 
-// GET /api/products
-// Returns a lightweight list of all products (name, brand, starting price, thumbnail)
 export const getAllProducts = async (req, res) => {
   try {
     const products = await Product.find({});
@@ -27,8 +25,6 @@ export const getAllProducts = async (req, res) => {
   }
 };
 
-// GET /api/products/:slug
-// Returns full product detail including all variants and their EMI plans
 export const getProductBySlug = async (req, res) => {
   try {
     const product = await Product.findOne({ slug: req.params.slug });

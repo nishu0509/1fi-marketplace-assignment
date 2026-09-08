@@ -4,8 +4,6 @@ import Product from "./models/Product.js";
 
 dotenv.config();
 
-// Helper to generate a standard EMI plan ladder for a given price
-// Mirrors the reference image: 3/6/12/24 months @ 0% interest, 36/48/60 months @ 10.5%
 const generateEmiPlans = (price, cashback = 7500) => {
   const plans = [
     { tenureMonths: 3, interestRate: 0 },
@@ -22,7 +20,7 @@ const generateEmiPlans = (price, cashback = 7500) => {
     if (interestRate === 0) {
       monthlyAmount = Math.round(price / tenureMonths);
     } else {
-      // simple monthly interest approximation for demo purposes
+      
       const totalInterest = (price * interestRate * (tenureMonths / 12)) / 100;
       monthlyAmount = Math.round((price + totalInterest) / tenureMonths);
     }
